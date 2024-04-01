@@ -94,3 +94,14 @@ We need to be careful when using the Init because it will not rerun if we restar
 
 https://www.gitpod.io/docs/configure/workspaces
 
+### Working with env vars
+
+#### env command
+
+We can display all the environment variables (env vars) using the `env` command
+
+we can filter specific env vars using `grep` e.g. `env | grep AWS_`
+
+In the terminal we can set a custom env var using `export HELLO='world'
+
+To unset the env var use `unset HELLO` 
