@@ -54,7 +54,7 @@ The BASH script is located here: [./bin/install_terraform_cli.sh](./bin/install_
 -This will make it easier to debug and manually excecute the Terraform CLI install
 -This will allow better portability for other projects that need to install the Terraform CLI
 
-#### Shebang
+#### Shebang Considerations
 
 The shebang line tells the operating system which program to use to understand and execute the script's commands. For Bash scripts, the most common shebang is `#!/bin/bash`. In this project `#!/usr/bin/env bash` is used 
 
@@ -63,7 +63,7 @@ The shebang line tells the operating system which program to use to understand a
 
 https://en.wikipedia.org/wiki/Shebang_(Unix)
 
-## Execution Considerations
+#### Execution Considerations
 
 When executing the BASH script we can use the `./` shorthand notation to execute the BASH script
 
@@ -78,9 +78,19 @@ eg `source ./bin/install_terraform_cli`
 #### Linux Permissions considerations
 
 To make our BASH scripts executable we need to change Linux permission for the fix to be executable at the user mode
+```sh
+chmod u+x ./bin/install_terraform_cli
+```
 
-chmod u=x ./bin/install_terraform_cli
-
+Alternatively:
+```sh
+chmod 744 ./bin/install_terraform_cli
+```
 https://en.wikipedia.org/wiki/Chmod
+
+### Gitpod Lifecycle (Before, Init, Command)
+
+We need to be careful when using the Init because it will not rerun if we restart an existing workspace
+
 https://www.gitpod.io/docs/configure/workspaces
 
