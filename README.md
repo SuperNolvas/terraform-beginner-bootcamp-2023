@@ -201,7 +201,7 @@ This will run a plan and invoke the infastructure plan executed by Terraform. To
 
 `terraform apply --auto-approve`
 
-## Terrafirn Lock files
+## Terraform Lock files
 
 `.terraform.lock.hcl` contains the locked versioning for the providers or modules that should be using with this project
 
