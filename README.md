@@ -201,6 +201,10 @@ This will run a plan and invoke the infastructure plan executed by Terraform. To
 
 `terraform apply --auto-approve`
 
+#### Terraform Destroy
+
+This will destroy/take down resources that were created via terraform apply
+
 ## Terraform Lock files
 
 `.terraform.lock.hcl` contains the locked versioning for the providers or modules that should be using with this project
