@@ -253,3 +253,5 @@ Provide the following code and replace your token in the file
     }
 
 ```
+
+we have automated tihs workarond with the following BASH script [bin/generate_tfrc_credentials](bin/generate_tfrc_credentials)
