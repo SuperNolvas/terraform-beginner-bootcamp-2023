@@ -1,19 +1,19 @@
 # Terraform Beginner Bootcamp 2023 - Week 0
 
-- [Semantic Versioning :mage:](#semantic-versioning--mage-)
+- [Semantic Versioning](#semantic-versioning)
 - [Install the Terraform CLI](#install-the-terraform-cli)
   * [Considerations for Linux Distribution](#considerations-for-linux-distribution)
   * [Refactoring into Bash Scripts](#refactoring-into-bash-scripts)
     + [Shebang Considerations](#shebang-considerations)
     + [Execution Considerations](#execution-considerations)
     + [Linux Permissions considerations](#linux-permissions-considerations)
-  * [Gitpod Lifecycle (Before, Init, Command)](#gitpod-lifecycle--before--init--command-)
-  * [Working with env vars](#working-with-env-vars)
-    + [env command](#env-command)
-    + [Printing Vars](#printing-vars)
-    + [Scoping of env vars](#scoping-of-env-vars)
-      - [Persisting env vars in Gitpod](#persisting-env-vars-in-gitpod)
-  * [AWS CLI Installation](#aws-cli-installation)
+- [Gitpod Lifecycle (Before, Init, Command)](#gitpod-lifecycle-before-init-command)
+- [Working with env vars](#working-with-env-vars)
+  * [env command](#env-command)
+  * [Printing Vars](#printing-vars)
+  * [Scoping of env vars](#scoping-of-env-vars)
+  * [Persisting env vars in Gitpod](#persisting-env-vars-in-gitpod)
+- [AWS CLI Installation](#aws-cli-installation)
 - [Terraform Basics](#terraform-basics)
   * [Terraform Registry](#terraform-registry)
 - [Terraform Console](#terraform-console)
@@ -26,7 +26,7 @@
 - [Issues with Terraform cloud Login and Gitpod Workspace](#issues-with-terraform-cloud-login-and-gitpod-workspace)
 
 
-## Semantic Versioning :mage:
+## Semantic Versioning
 
 This project is going to utilise semantic versioning for its tagging
 [semver.org](https://semver.org/)
@@ -114,15 +114,15 @@ chmod 744 ./bin/install_terraform_cli
 ```
 https://en.wikipedia.org/wiki/Chmod
 
-### Gitpod Lifecycle (Before, Init, Command)
+## Gitpod Lifecycle (Before Init Command)
 
 We need to be careful when using the Init because it will not rerun if we restart an existing workspace
 
 https://www.gitpod.io/docs/configure/workspaces
 
-### Working with env vars
+## Working with env vars
 
-#### env command
+### env command
 
 We can display all the environment variables (env vars) using the `env` command
 
@@ -148,15 +148,15 @@ HELLO='world'
 echo $HELLO
 ```
 
-#### Printing Vars
+### Printing Vars
 
 We can print an env var using echo e.g. `$echo HELLO`
 
-#### Scoping of env vars
+### Scoping of env vars
 
 When opening new BASH terminals in VSCode it will not be aware of env vars that you have set in another terminal windows. If you want env vars to persiste across all future BASH terminals that are open you neec to set env vars in your BASH profile e.g. `.bash_profile`
 
-##### Persisting env vars in Gitpod
+### Persisting env vars in Gitpod
 
 We can persist env vars into Gitpod by storing them in Gitpod Secrets Storage.
 
@@ -168,7 +168,7 @@ All future workspaces launched will set the env vars for all BASH terminals open
 
 You can also set env vars in the `.gitpod.yml` but this can only contain non-sensitive env vars
 
-### AWS CLI Installation
+## AWS CLI Installation
 
 AWS CLI is installed for this project via the BASH script
 [`./bin/install_aws_cli`]`.bin/install_aws_cli`
