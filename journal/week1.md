@@ -64,3 +64,25 @@ Terraform uses a specific order of precedence when determining the value of a va
 - Variable defaults
 
 [Terraform Variables](https://www.env0.com/blog/terraform-variables)
+
+## Dealing with Configuration Drift
+
+## What happens if we lose our state file?
+
+If you lose your statefile, you most likely have to tear down all your cloud infrastructure manually. 
+
+You can use Terraform import but it won't work for all cloud resources, check the documentation for the resources that support import
+
+### Fix missing resources with Terraform Import
+
+`terraform import aws_s3_bucket.bucket bucket-name`
+
+[Tarraform Import](https://developer.hashicorp.com/terraform/cli/import)
+[AWS S3 Bucket Import](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket#import)
+
+
+
+### Fix Manual Configuration
+
+If someone one goes and deletes Cloud resources manually through ClickOp. If we run Terraform plan again it will attempt to put our Infrastructure back to the expected state fixing Configuration Drift.
+
